@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -115,6 +121,7 @@
   <ItemGroup>
     <Compile Include="Helpers\UnityResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,10 +134,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SpaUserControl.Common\SpaUserControl.Common.csproj">
+      <Project>{e42cae85-a6bf-4553-9ffb-80b6e75a33e9}</Project>
+      <Name>SpaUserControl.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpaUserControl.Domain\SpaUserControl.Domain.csproj">
+      <Project>{4e8e6ddb-21b4-40bb-baf8-f7c97b62633b}</Project>
+      <Name>SpaUserControl.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SpaUserControl.Startup\SpaUserControl.Startup.csproj">
       <Project>{4a27e800-5e4d-43ac-8a73-a73ecb78fb26}</Project>
       <Name>SpaUserControl.Startup</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
