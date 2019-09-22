@@ -13,6 +13,7 @@ namespace SpaUserControl.Api
     public class Startup
     {
         public object DepencyResolver { get; private set; }
+        public int Depencias  { get; set; }
 
         public void Configuration(IAppBuilder app)
         {
